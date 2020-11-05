@@ -1,0 +1,54 @@
+version: "3"
+services:
+    database:
+        image: 'mysql:5.7'
+        network_mode: host
+        container_name: database
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: gipherdb
+            MYSQL_USER: root
+            MYSQL_PASSWORD: root
+        restart: always
+        ports:
+            - 3306:3306
+            
+    accountmanager-docker:
+        image: 'accountmanager:latest'
+        network_mode: host
+        container_name: accountmanager-docker
+        build: ./accountmanager
+        restart: always
+        depends_on:
+            - database
+        ports:
+            - 8080:8080
+        
+        
+            
+    giphermanager-docker:
+        image: 'giphermanager:latest'
+        network_mode: host
+        container_name: giphermanager-docker
+        build: ./giphermanager
+        restart: always
+        depends_on:
+            - database
+        ports:
+            - 8095:8095
+        
+        
+            
+    gipher-ui-docker:
+        image: 'gipher-ui-image:latest'
+        network_mode: host
+        container_name: gipher-ui-docker
+        build: ./GipherUI
+        
+        restart: always
+        ports:
+            - 4200:4200
+        
+        depends_on:
+            - accountmanager-docker
+            - giphermanager-docker

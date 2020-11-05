@@ -1,0 +1,49 @@
+span {
+    margin: 5px;
+}
+
+a {
+    color: black;
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    
+    position: fixed;
+    z-index: 1000;
+}
+.header-nav-row{
+    background-color: darkseagreen;
+}
+
+.header-search-row{
+  background-color: lightsteelblue;
+  padding-top: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar-nav{
+        visibility: visible;
+    }
+
+    .min-header{
+        visibility: hidden;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .navbar-nav{
+        visibility: hidden;
+width: 0px;
+    }
+
+    .min-header{
+        visibility: visible;
+    }
+}

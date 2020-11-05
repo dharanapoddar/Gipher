@@ -1,0 +1,27 @@
+<label class="error-message">{{submitMessage}}</label>
+<div class="main-div">
+
+
+
+  <mat-card class="login-card">
+    <mat-card-title>Register</mat-card-title>
+    <mat-card-content>
+
+      <mat-form-field>
+        <input required class="username" matInput [formControl]="username" placeholder="Enter your Username"
+          name="username" id="uname">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="password" class="password" required matInput [formControl]="password"
+          placeholder="Enter your password" name="password" id="pass">
+      </mat-form-field>
+
+
+      <button (click)="registerSubmit()" mat-button color="primary">Submit</button>
+
+
+    </mat-card-content>
+
+  </mat-card>
+</div>

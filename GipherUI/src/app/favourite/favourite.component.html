@@ -1,0 +1,13 @@
+<!-- <div class="container" >
+  <mat-form-field>
+    <input required class="key" matInput [formControl]="key" placeholder="Enter the key to serach" name="key" id="key">
+  </mat-form-field>
+  <button (click)="performSearch()" mat-button color="primary">Search</button>
+</div> -->
+
+<div *ngIf="isDataLoaded">
+
+<ngx-masonry [useImagesLoaded]="true">
+  <app-gif [gif]="gif" ngxMasonryItem class="masonry-item" *ngFor="let gif of gifs"></app-gif>
+</ngx-masonry>
+</div>

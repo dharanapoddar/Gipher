@@ -1,0 +1,25 @@
+.bookmarked {
+    color: green;
+}
+
+.favorited {
+    color: red;
+}
+
+mat-card {
+    background-color: darkslategray;
+}
+
+.mat-btn {
+    background-color: floralwhite;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .mat-btn {
+        background-color: floralwhite;
+        margin: 5px;
+        width: 45px!important;
+        min-width: unset!important;
+    }
+}

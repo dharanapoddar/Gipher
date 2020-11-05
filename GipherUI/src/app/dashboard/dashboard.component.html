@@ -1,0 +1,57 @@
+<!--<mat-card class="cards">
+    <mat-card-header>
+    </mat-card-header>
+    <mat-card-content>
+         <img mat-card-image src={{homepage_background}} alt="">
+    </mat-card-content>
+  </mat-card>-->
+
+<!--<div class="container-fluid">
+<div class="row">
+  <div class="col-lg-3 col-sm-6 col-12" *ngFor="let gi of gifs">
+    <mat-card class="cards">
+      <img mat-card-image src={{gi.images.original.url}} alt="">
+
+      <mat-card-content>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+</div>
+</div>-->
+
+<!-- <div class="container">
+  <mat-form-field>
+    <input required class="key" matInput [formControl]="key" placeholder="Enter the key to serach" name="key" id="key">
+  </mat-form-field>
+  <button (click)="performSearch()" mat-button color="primary">Search</button>
+</div> -->
+<!-- <div>
+  <img mat-card-image src={{homepage_background}} alt="">
+</div> -->
+<div *ngIf="isDataLoaded">
+<ngx-masonry [useImagesLoaded]="true">
+  <app-gif [gif]="gif" ngxMasonryItem class="masonry-item" *ngFor="let gif of gifs"></app-gif>
+  <!-- <div ngxMasonryItem class="masonry-item" *ngFor="let gi of gifs">
+    <mat-card class="cards" *ngIf="gi">
+      <img mat-card-image src={{gi.images.original.url}} alt="" (click)="openView(gi.id)">
+
+      <mat-card-content>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="mat-btn" (click)=addToBookmark(gi.id)><i class="fa fa-bookmark"
+          [ngClass]="{'bookmarked' : gi.isBookmarked}" aria-hidden="true"></i></button>
+        <button mat-button class="mat-btn" (click)=addToFavourite(gi.id)><i class="fa fa-heart-o"
+            aria-hidden="true"></i></button>
+
+      </mat-card-actions>
+    </mat-card>
+  </div> -->
+</ngx-masonry>
+</div>

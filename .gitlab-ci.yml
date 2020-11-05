@@ -1,0 +1,21 @@
+image: 'java:8-jdk'
+
+stages:
+    - build
+services:
+  - mysql:latest
+  
+variables:
+  MYSQL_DATABASE: gipherdb
+  MYSQL_ROOT_PASSWORD: root
+cache:
+    paths:
+        - .m2/repository
+        - target
+maven-build:
+    stage: build
+    image: 'maven:3.3.9-jdk-8'
+    script: 'mvn package -U'
+    artifacts:
+        paths:
+            - 'target/*.jar'

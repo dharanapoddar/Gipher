@@ -1,0 +1,23 @@
+<label class="error-message">{{submitMessage}}</label>
+<div *ngIf="isDataLoaded">
+
+  <div class="gif-view-container">
+    <button mat-button class="close-icon mat-close-button" [mat-dialog-close]="true">
+      <mat-icon><i class="fa fa-times" aria-hidden="true"></i></mat-icon>
+    </button>
+    <!-- <app-gif [gif]="gif"></app-gif> -->
+
+    <mat-card class="cards" *ngIf="gif">
+      <img mat-card-image src={{gif.images.original.url}} alt="">
+      <!-- <mat-card-actions>
+        <button mat-button class="mat-btn" (click)=addToBookmark(gif.id)><i class="fa fa-bookmark"
+            [ngClass]="{'bookmarked' : gif.isBookmarked}" aria-hidden="true"></i></button>
+        <button mat-button class="mat-btn" (click)=Favourite(gif.id)><i class="fa fa-heart"
+            [ngClass]="{'favorited' : gif.isFavourite}" aria-hidden="true"></i></button>
+
+      </mat-card-actions> -->
+    </mat-card>
+
+
+  </div>
+</div>
